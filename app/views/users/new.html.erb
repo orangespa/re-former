@@ -1,0 +1,38 @@
+<!-- <form accept-charset="UTF-8" action="/users" class="new_user"
+      id="new_user" method="post">
+  <input name="utf8" type="hidden" value="&#x2713;" />
+  <input name="authenticity_token" type="hidden"
+         value="<%= form_authenticity_token %>"/>
+
+
+  <label for="username">Name</label>
+  <input id="username" name="username" type="text" />
+
+
+  <label for="email">Email</label>
+  <input id="email" name="email" type="email" />
+
+
+  <label for="password">Password</label>
+  <input id="password" name="password"
+         type="password" />
+
+
+  <input class="btn btn-primary" name="commit" type="submit"
+         value="Create my account" />
+</form>
+ -->
+<%= form_for(@user) do |f| %>
+      <%= f.label :username %>
+      <%= f.text_field :username,placeholder: "abcxyz" %>
+       
+
+      <%= f.label :email %>
+      <%= f.email_field :email, placeholder: "abcxyz@gmail.com" %>
+
+      <%= f.label :password %>
+      <%= f.password_field :password, placeholder: "123456" %>
+
+      <%= f.submit "Create my account", class: "btn btn-primary" %>
+    <% end %>
+
